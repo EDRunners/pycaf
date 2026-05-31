@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Proyectos y Construcciones Andres | Maquinaria industrial para alimentos</title>
+    <meta name="description" content="Fabricación, instalación y mantenimiento de sistemas de ordeño, plantas lácteas, pasteurizadores, marmitas y llenadores. Atendemos B2B en Venezuela.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #ffffff;
+            color: #1e2a3e;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* HEADER / NAV SIMPLE */
+        .top-bar {
+            background-color: #0a2f6c;
+            color: white;
+            padding: 0.75rem 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .contact-info span {
+            margin-right: 1rem;
+        }
+
+        .contact-info a {
+            color: #f4c542;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .main-nav {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 2px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.2rem;
+            color: #0a2f6c;
+            border-left: 5px solid #f4c542;
+            padding-left: 0.75rem;
+        }
+
+        .nav-links a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: #1e2a3e;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #f4c542;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #0a2f6c 0%, #123e7c 100%);
+            color: white;
+            padding: 3.5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-wa-large {
+            background-color: #25D366;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.2s;
+        }
+
+        .btn-wa-large:hover {
+            background-color: #128C7E;
+        }
+
+        /* Sección de especialidades */
+        .specialties {
+            padding: 3rem 0;
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .specialty-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .specialty-item h3 {
+            color: #0a2f6c;
+            margin-bottom: 0.5rem;
+        }
+
+        /* CATÁLOGO DE PRODUCTOS (aprobado) */
+        .catalog-section {
+            padding: 3rem 1.5rem;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: #0a2f6c;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.75rem;
+        }
+
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 4px;
+            background-color: #f4c542;
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-img {
+            background-color: #e2e8f0;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(135deg, #cbd5e1 0%, #e2e8f0 100%);
+        }
+
+        .product-img span {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0a2f6c;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            color: #2d3e50;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-spec {
+            font-size: 0.8rem;
+            background: #f1f5f9;
+            padding: 0.5rem;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            font-weight: 500;
+        }
+
+        .card-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #0a2f6c;
+            color: #0a2f6c;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-align: center;
+            flex: 1;
+        }
+
+        .btn-outline:hover {
+            background: #0a2f6c;
+            color: white;
+        }
+
+        .btn-wa {
+            background-color: #25D366;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-align: center;
+            flex: 1;
+        }
+
+        .btn-wa:hover {
+            background-color: #128C7E;
+        }
+
+        /* Emergency banner */
+        .emergency-banner {
+            background: #fff3e0;
+            border-left: 8px solid #f4c542;
+            padding: 1rem 1.5rem;
+            margin: 2rem 1.5rem;
+            border-radius: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn-emergency {
+            background-color: #d97706;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* FORMULARIO TÉCNICO (aprobado) */
+        .form-section {
+            background: #f8fafc;
+            padding: 3rem 1.5rem;
+        }
+
+        .form-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #0a2f6c;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            font-family: inherit;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-submit {
+            background-color: #0a2f6c;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .btn-submit:hover {
+            background-color: #f4c542;
+            color: #0a2f6c;
+        }
+
+        /* About / confianza */
+        .about-trust {
+            padding: 3rem 1.5rem;
+            text-align: center;
+            background: white;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a2f6c;
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .nav-links a {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+            }
+            .emergency-banner {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container">
+        <div class="contact-info">
+            <span>📞 0414-570.81.92</span>
+            <span>📍 Calle Bloque 1, Urb. El Hipódromo, Maracay</span>
+        </div>
+        <div>📧 <a href="mailto:proyectosandres@ejemplo.com">andres@proyectosandres.com</a></div>
+    </div>
+</div>
+
+<div class="main-nav">
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>Proyectos y Construcciones Andres, F.P.</h1>
+        </div>
+        <div class="nav-links">
+            <a href="#">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#cotizar">Cotizar</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <h1>Fabricación, Instalación y Mantenimiento de Maquinaria Industrial para Alimentos</h1>
+        <p>Equipos en acero inoxidable AISI 304/316 para plantas lácteas, pasteurización, llenado y procesamiento de alimentos. Atendemos a empresas e industrias en Venezuela.</p>
+        <a href="https://wa.me/584145708192?text=Hola%2C%20necesito%20informaci%C3%B3n%20t%C3%A9cnica%20de%20sus%20equipos" class="btn-wa-large" target="_blank">💬 Contactar por WhatsApp</a>
+    </div>
+</section>
+
+<!-- Especialidades -->
+<section class="specialties">
+    <div class="container">
+        <h2 style="color:#0a2f6c;">Especialidades industriales</h2>
+        <div class="specialties-grid">
+            <div class="specialty-item"><h3>🐄 Sistemas de ordeño</h3><p>Fijos o portátiles, hasta 10 puntos.</p></div>
+            <div class="specialty-item"><h3>🧀 Plantas lácteas y queseras</h3><p>Diseño modular hasta 5000 L.</p></div>
+            <div class="specialty-item"><h3>🔥 Pasteurizadores</h3><p>Jugos y bebidas lácteas.</p></div>
+            <div class="specialty-item"><h3>⚙️ Marmitas, homogenizadores, llenadores</h3><p>Productos líquidos y pastosos.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- CATÁLOGO DE PRODUCTOS (aprobado) -->
+<section id="catalogo" class="catalog-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Catálogo de Equipos Industriales</h2>
+            <p>Fabricados en acero inoxidable AISI 304/316 • Alta eficiencia</p>
+        </div>
+        <div class="products-grid">
+            <!-- Sistema de Ordeño -->
+            <div class="product-card">
+                <div class="product-img"><span>📸 IMAGEN REAL</span></div>
+                <div class="product-info">
+                    <h3 class="product-title">Sistemas de Ordeño</h3>
+                    <div class="product-desc">Unidades fijas o portátiles, desde 2 hasta 10 puestos. Colectores en acero.</div>
+                    <div class="tech-spec">Capacidad: 200 – 2000 L/día</div>
+                    <div class="card-buttons">
+                        <a href="#" class="btn-outline" onclick="alert('Solicite ficha técnica vía WhatsApp'); return false;">📄 Ficha técnica</a>
+                        <a href="https://wa.me/584145708192?text=Cotizar%20Sistema%20de%20Ordeño" class="btn-wa" target="_blank">💬 Cotizar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Planta Láctea -->
+            <div class="product-card">
+                <div class="product-img"><span>📸 IMAGEN REAL</span></div>
+                <div class="product-info">
+                    <h3 class="product-title">Plantas Lácteas y Queseras</h3>
+                    <div class="product-desc">Tinas de cuajado, prensas, sistema de salmuera.</div>
+                    <div class="tech-spec">Capacidad 300 – 5000 L</div>
+                    <div class="card-buttons">
+                        <a href="#" class="btn-outline" onclick="alert('Ficha técnica disponible'); return false;">📄 Ficha técnica</a>
+                        <a href="https://wa.me/584145708192?text=Planta%20láctea%20completa" class="btn-wa" target="_blank">💬 Cotizar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pasteurizador -->
+            <div class="product-card">
+                <div class="product-img"><span>📸 IMAGEN REAL</span></div>
+                <div class="product-info">
+                    <h3 class="product-title">Pasteurizadores para Jugos y Lácteos</h3>
+                    <div class="product-desc">Sistemas de placas o tubulares, control de temperatura.</div>
+                    <div class="tech-spec">Caudal: 200 – 3000 L/h • AISI 316</div>
+                    <div class="card-buttons">
+                        <a href="#" class="btn-outline" onclick="alert('Solicitar ficha técnica'); return false;">📄 Ficha técnica</a>
+                        <a href="https://wa.me/584145708192?text=Cotizar%20Pasteurizador" class="btn-wa" target="_blank">💬 Cotizar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Marmitas -->
+            <div class="product-card">
+                <div class="product-img"><span>📸 IMAGEN REAL</span></div>
+                <div class="product-info">
+                    <h3 class="product-title">Marmitas Industriales</h3>
+                    <div class="product-desc">Doble fondo, agitador, calefacción eléctrica o vapor.</div>
+                    <div class="tech-spec">Volumen: 100 – 2000 L</div>
+                    <div class="card-buttons">
+                        <a href="#" class="btn-outline" onclick="alert('Ficha técnica bajo solicitud'); return false;">📄 Ficha técnica</a>
+                        <a href="https://wa.me/584145708192?text=Marmita%20industrial%20capacidad" class="btn-wa" target="_blank">💬 Cotizar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Homogenizadores -->
+            <div class="product-card">
+                <div class="product-img"><span>📸 IMAGEN REAL</span></div>
+                <div class="product-info">
+                    <h3 class="product-title">Homogenizadores</h3>
+                    <div class="product-desc">Alta presión, dos o tres etapas.</div>
+                    <div class="tech-spec">Capacidad 500 – 5000 L/h • 200 bar</div>
+                    <div class="card-buttons">
+                        <a href="#" class="btn-outline" onclick="alert('Disponible ficha técnica'); return false;">📄 Ficha técnica</a>
+                        <a href="https://wa.me/584145708192?text=Homogenizador" class="btn-wa" target="_blank">💬 Cotizar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Llenadores -->
+            <div class="product-card">
+                <div class="product-img"><span>📸 IMAGEN REAL</span></div>
+                <div class="product-info">
+                    <h3 class="product-title">Llenadores volumétricos</h3>
+                    <div class="product-desc">Para líquidos y pastosos (yogur, salsas, cremas).</div>
+                    <div class="tech-spec">Rango: 50 mL – 5 L • Acero inoxidable</div>
+                    <div class="card-buttons">
+                        <a href="#" class="btn-outline" onclick="alert('Solicite por WhatsApp'); return false;">📄 Ficha técnica</a>
+                        <a href="https://wa.me/584145708192?text=Llenador%20industrial" class="btn-wa" target="_blank">💬 Cotizar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Banner Emergencia -->
+<div class="emergency-banner container">
+    <div><strong>⚠️ SERVICIO TÉCNICO DE EMERGENCIA 24/7</strong><br>¿Parada crítica en su planta? Evite pérdida de materia prima. Mantenimiento correctivo inmediato.</div>
+    <a href="https://wa.me/584145708192?text=URGENTE%20-%20Requiero%20mantenimiento%20correctivo%20inmediato" class="btn-emergency" target="_blank">REPORTAR EMERGENCIA →</a>
+</div>
+
+<!-- FORMULARIO TÉCNICO (aprobado) -->
+<section id="cotizar" class="form-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Solicitud de cotización técnica</h2>
+            <p>Complete el formulario y reciba presupuesto detallado para marmitas, pasteurizadores y más.</p>
+        </div>
+        <div class="form-card">
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Nombre de la empresa *</label>
+                    <input type="text" name="empresa" required>
+                </div>
+                <div class="form-group">
+                    <label>Nombre completo del responsable *</label>
+                    <input type="text" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Cargo</label>
+                    <input type="text" name="cargo">
+                </div>
+                <div class="form-group">
+                    <label>Teléfono / WhatsApp *</label>
+                    <input type="tel" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo electrónico *</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de equipo a cotizar *</label>
+                    <select name="tipo_equipo" required>
+                        <option value="marmita">Marmita industrial</option>
+                        <option value="pasteurizador">Pasteurizador</option>
+                        <option value="homogenizador">Homogenizador</option>
+                        <option value="llenador">Llenador</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Capacidad requerida (litros o L/h) *</label>
+                    <input type="number" name="capacidad" required>
+                </div>
+                <div class="form-group">
+                    <label>Material del equipo</label>
+                    <select name="material">
+                        <option value="304">Acero AISI 304</option>
+                        <option value="316">Acero AISI 316</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Solo para marmitas: tipo de calefacción</label>
+                    <input type="text" name="calefaccion" placeholder="Eléctrica / Vapor / Inducción">
+                </div>
+                <div class="form-group">
+                    <label>Solo para pasteurizador: producto / temperatura / flujo</label>
+                    <textarea name="especificaciones" rows="2" placeholder="Ej: leche fluida, 85°C, 800 L/h"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Nivel de urgencia</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="urgencia" value="normal"> Normal (3 días)</label>
+                        <label><input type="radio" name="urgencia" value="urgente"> Urgente – Planta detenida</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Adjuntar plano o requerimiento (opcional)</label>
+                    <input type="file" name="adjunto">
+                </div>
+                <button type="submit" class="btn-submit">Enviar solicitud de cotización</button>
+            </form>
+            <p style="margin-top: 1rem; font-size: 0.8rem; text-align: center;">También puede contactarnos directamente por <a href="https://wa.me/584145708192" target="_blank">WhatsApp 0414-570.81.92</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de confianza / Nosotros -->
+<section id="contacto" class="about-trust">
+    <div class="container">
+        <h2 style="color:#0a2f6c;">¿Por qué elegirnos?</h2>
+        <div class="trust-grid">
+            <div>🏭 <strong>Taller propio</strong><br>Calle Bloque 1, Urb. El Hipódromo, Maracay</div>
+            <div>📄 <strong>Fichas técnicas descargables</strong><br>Capacidades, materiales, dimensiones</div>
+            <div>⚖️ <strong>RIF V-19284682-6</strong><br>Datos fiscales verificables</div>
+            <div>🔧 <strong>Ing. Andrés Monsalve</strong><br>Atención directa y soporte técnico</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p><strong>Proyectos y Construcciones Andres, F.P.</strong> | RIF: V-19284682-6</p>
+        <p>📍 Calle Bloque 1 Casa Letra A N° 25, Urb. El Hipodromo, Maracay, Aragua, Venezuela.</p>
+        <p>📞 0414-570.81.92 | ✉️ andres@proyectosandres.com</p>
+        <p style="margin-top: 1rem;">© 2026 – Fabricación, instalación y mantenimiento para la industria alimentaria B2B.</p>
+    </div>
+</footer>
+
+</body>
+</html>
